@@ -11,3 +11,12 @@ resource "aws_internet_gateway" "main" {
 
   tags = local.igw_final_tags
 }
+
+# resource "aws_subnet" "public" {
+#   vpc_id     = aws_vpc.main.id       # it will associate(add) above created vpc to this public subnets
+#   cidr_block = var.public_subnet_cidrs
+#   # availability_zone = data.aws_availability_zones.available.names[count.index]
+#   #map_public_ip_on_launch = true
+
+#   tags = 
+# }
