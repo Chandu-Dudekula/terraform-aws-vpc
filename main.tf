@@ -62,7 +62,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route_table" "database" {
-  vpc_id = aws_vpc.main
+  vpc_id = aws_vpc.main.id
   
   tags = merge(local.common_tags, {Name = "${var.project}-${var.environment}-database"}, var.database_route_table_tags )
 }
